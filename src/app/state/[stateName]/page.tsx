@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import BusinessIndustry from "@/app/components/Business";
 import JobsEmployment from "@/app/components/Employment";
 import IncomeTaxCalculator from "@/app/components/IncomeTaxCalculator";
-
+import StateEducationOverview from "@/app/components/EducationScreenshot";
 
 export default function StateDetailPage() {
   const params = useParams();
@@ -25,6 +25,8 @@ export default function StateDetailPage() {
         return <BusinessIndustry state={state} />;
       case "👷 Jobs & Employment":
         return <JobsEmployment state={state} />;
+      case"🏫 Education":
+        return <StateEducationOverview state={state} />;
       case "📊 Charts":
         return (
           <div className="mt-8">
@@ -40,7 +42,7 @@ export default function StateDetailPage() {
     <main className="p-6 max-w-5xl mx-auto">
       <h1 className="text-3xl font-bold mb-6 text-white">{state} Overview</h1>
       <div className="mb-6 flex flex-wrap gap-4">
-        {["💰 Taxes", "🏥 Healthcare", "🚓 Crime", "🏢 Business & Industry", "👷 Jobs & Employment", "📊 Charts"].map((tab) => (
+        {["💰 Taxes", "🏥 Healthcare", "🚓 Crime", "🏢 Business & Industry", "👷 Jobs & Employment","🏫 Education", "📊 Charts"].map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
