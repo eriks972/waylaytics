@@ -1,0 +1,1134 @@
+{
+  "Alabama": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.02, "over": 0 },
+          { "rate": 0.04, "over": 500 },
+          { "rate": 0.05, "over": 3000 }
+        ],
+        "standardDeduction": 3000,
+        "personalExemption": 1500
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.02, "over": 0 },
+          { "rate": 0.04, "over": 1000 },
+          { "rate": 0.05, "over": 6000 }
+        ],
+        "standardDeduction": 8500,
+        "personalExemption": 3000
+      },
+      "dependentExemption": 1000
+    }
+  },
+  "Alaska": {
+        "incomeTax": {
+        "single": {
+            "brackets": [
+            { "rate": 0.00, "over": 0 }
+            ],
+            "standardDeduction": 0,
+            "personalExemption": 0
+        },
+        "married": {
+            "brackets": [
+            { "rate": 0.00, "over": 0 }
+            ],
+            "standardDeduction": 0,
+            "personalExemption": 0
+        },
+        "dependentExemption": 0
+        }
+    },
+  "Arizona": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.025, "over": 0 }
+        ],
+        "standardDeduction": 15000,
+        "personalExemption": null
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.025, "over": 0 }
+        ],
+        "standardDeduction": 30000,
+        "personalExemption": null
+      },
+      "dependentCredit": 100
+    }
+  },
+  "Arkansas": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.02, "over": 0 },
+          { "rate": 0.039, "over": 4500 }
+        ],
+        "standardDeduction": 2410,
+        "personalCredit": 29
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.02, "over": 0 },
+          { "rate": 0.039, "over": 4500 }
+        ],
+        "standardDeduction": 4820,
+        "personalCredit": 58
+      },
+      "dependentCredit": 29
+    }
+  },
+  "California": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.01, "over": 0 },
+          { "rate": 0.02, "over": 10756 },
+          { "rate": 0.04, "over": 25499 },
+          { "rate": 0.06, "over": 40245 },
+          { "rate": 0.08, "over": 55866 },
+          { "rate": 0.093, "over": 70606 },
+          { "rate": 0.103, "over": 360659 },
+          { "rate": 0.113, "over": 432787 },
+          { "rate": 0.123, "over": 721314 },
+          { "rate": 0.133, "over": 1000000 }
+        ],
+        "standardDeduction": 5540,
+        "personalCredit": 149
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.01, "over": 0 },
+          { "rate": 0.02, "over": 21512 },
+          { "rate": 0.04, "over": 50998 },
+          { "rate": 0.06, "over": 80490 },
+          { "rate": 0.08, "over": 111732 },
+          { "rate": 0.093, "over": 141732 },
+          { "rate": 0.103, "over": 721318 },
+          { "rate": 0.113, "over": 865574 },
+          { "rate": 0.123, "over": 1000000 },
+          { "rate": 0.133, "over": 1442628 }
+        ],
+        "standardDeduction": 11080,
+        "personalCredit": 298
+      },
+      "dependentCredit": 461
+    }
+  },
+  "Colorado": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.044, "over": 0 }
+        ],
+        "standardDeduction": 15000,
+        "personalExemption": null
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.044, "over": 0 }
+        ],
+        "standardDeduction": 30000,
+        "personalExemption": null
+      },
+      "dependentExemption": null
+    }
+  },
+  "Connecticut": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.02, "over": 0 },
+          { "rate": 0.045, "over": 10000 },
+          { "rate": 0.055, "over": 50000 },
+          { "rate": 0.06, "over": 100000 },
+          { "rate": 0.065, "over": 200000 },
+          { "rate": 0.069, "over": 250000 },
+          { "rate": 0.0699, "over": 500000 }
+        ],
+        "standardDeduction": null,
+        "personalExemption": 15000
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.02, "over": 0 },
+          { "rate": 0.045, "over": 20000 },
+          { "rate": 0.055, "over": 100000 },
+          { "rate": 0.06, "over": 200000 },
+          { "rate": 0.065, "over": 400000 },
+          { "rate": 0.069, "over": 500000 },
+          { "rate": 0.0699, "over": 1000000 }
+        ],
+        "standardDeduction": null,
+        "personalExemption": 24000
+      },
+      "dependentExemption": 0
+    }
+  },
+  "Delaware": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.022, "over": 2000 },
+          { "rate": 0.039, "over": 5000 },
+          { "rate": 0.048, "over": 10000 },
+          { "rate": 0.052, "over": 20000 },
+          { "rate": 0.0555, "over": 25000 },
+          { "rate": 0.066, "over": 60000 }
+        ],
+        "standardDeduction": 3250,
+        "personalCredit": 110
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.022, "over": 2000 },
+          { "rate": 0.039, "over": 5000 },
+          { "rate": 0.048, "over": 10000 },
+          { "rate": 0.052, "over": 20000 },
+          { "rate": 0.0555, "over": 25000 },
+          { "rate": 0.066, "over": 60000 }
+        ],
+        "standardDeduction": 6500,
+        "personalCredit": 220
+      },
+      "dependentCredit": 110
+    }
+  },
+ "Florida": {
+    "incomeTax": {
+      "single": {
+        "brackets": [],
+        "standardDeduction": null,
+        "personalExemption": null
+      },
+      "married": {
+        "brackets": [],
+        "standardDeduction": null,
+        "personalExemption": null
+      },
+      "dependentExemption": null
+    }
+  },
+  "Georgia": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.0539, "over": 0 }
+        ],
+        "standardDeduction": 12000,
+        "personalExemption": null
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.0539, "over": 0 }
+        ],
+        "standardDeduction": 24000,
+        "personalExemption": null
+      },
+      "dependentDeduction": 4000
+    }
+  },
+  "Hawaii": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.014, "over": 0 },
+          { "rate": 0.032, "over": 9600 },
+          { "rate": 0.055, "over": 14400 },
+          { "rate": 0.064, "over": 19200 },
+          { "rate": 0.068, "over": 24000 },
+          { "rate": 0.072, "over": 36000 },
+          { "rate": 0.076, "over": 48000 },
+          { "rate": 0.079, "over": 125000 },
+          { "rate": 0.0825, "over": 175000 },
+          { "rate": 0.09, "over": 225000 },
+          { "rate": 0.10, "over": 275000 },
+          { "rate": 0.11, "over": 325000 }
+        ],
+        "standardDeduction": 4400,
+        "personalExemption": 1144
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.014, "over": 0 },
+          { "rate": 0.032, "over": 19200 },
+          { "rate": 0.055, "over": 28800 },
+          { "rate": 0.064, "over": 38400 },
+          { "rate": 0.068, "over": 48000 },
+          { "rate": 0.072, "over": 72000 },
+          { "rate": 0.076, "over": 96000 },
+          { "rate": 0.079, "over": 250000 },
+          { "rate": 0.0825, "over": 350000 },
+          { "rate": 0.09, "over": 450000 },
+          { "rate": 0.10, "over": 550000 },
+          { "rate": 0.11, "over": 650000 }
+        ],
+        "standardDeduction": 8800,
+        "personalExemption": 2288
+      },
+      "dependentExemption": 1144
+    }
+  },
+  "Idaho": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.05695, "over": 4673 }
+        ],
+        "standardDeduction": 15000,
+        "personalExemption": null
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.05695, "over": 9346 }
+        ],
+        "standardDeduction": 30000,
+        "personalExemption": null
+      },
+      "dependentExemption": null
+    }
+  },
+  "Illinois": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.0495, "over": 0 }
+        ],
+        "standardDeduction": null,
+        "personalExemption": 2850
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.0495, "over": 0 }
+        ],
+        "standardDeduction": null,
+        "personalExemption": 5700
+      },
+      "dependentExemption": 2850
+    }
+  },
+  "Indiana": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.03, "over": 0 }
+        ],
+        "standardDeduction": null,
+        "personalExemption": 1000
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.03, "over": 0 }
+        ],
+        "standardDeduction": null,
+        "personalExemption": 2000
+      },
+      "dependentExemption": 1000
+    }
+  },
+  "Iowa": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.038, "over": 0 }
+        ],
+        "standardDeduction": null,
+        "personalCredit": 40
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.038, "over": 0 }
+        ],
+        "standardDeduction": null,
+        "personalCredit": 80
+      },
+      "dependentCredit": 40
+    }
+  },
+  "Kansas": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.052, "over": 0 },
+          { "rate": 0.0558, "over": 23000 }
+        ],
+        "standardDeduction": 3605,
+        "personalExemption": 9160
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.052, "over": 0 },
+          { "rate": 0.0558, "over": 46000 }
+        ],
+        "standardDeduction": 8240,
+        "personalExemption": 18320
+      },
+      "dependentExemption": 2320
+    }
+  },
+  "Kentucky": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.04, "over": 0 }
+        ],
+        "standardDeduction": 3270,
+        "personalExemption": null
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.04, "over": 0 }
+        ],
+        "standardDeduction": 6540,
+        "personalExemption": null
+      },
+      "dependentExemption": null
+    }
+  },
+  "Louisiana": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.03, "over": 0 }
+        ],
+        "standardDeduction": 12500,
+        "personalExemption": null
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.03, "over": 0 }
+        ],
+        "standardDeduction": 25000,
+        "personalExemption": null
+      },
+      "dependentExemption": null
+    }
+  },
+  "Maine": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.058, "over": 0 },
+          { "rate": 0.0675, "over": 26800 },
+          { "rate": 0.0715, "over": 63450 }
+        ],
+        "standardDeduction": 15000,
+        "personalExemption": 5150
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.058, "over": 0 },
+          { "rate": 0.0675, "over": 53600 },
+          { "rate": 0.0715, "over": 126900 }
+        ],
+        "standardDeduction": 30000,
+        "personalExemption": 10300
+      },
+      "dependentCredit": 300
+    }
+  },
+  "Maryland": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.02, "over": 0 },
+          { "rate": 0.03, "over": 1000 },
+          { "rate": 0.04, "over": 2000 },
+          { "rate": 0.0475, "over": 3000 },
+          { "rate": 0.05, "over": 100000 },
+          { "rate": 0.0525, "over": 125000 },
+          { "rate": 0.055, "over": 150000 },
+          { "rate": 0.0575, "over": 250000 }
+        ],
+        "standardDeduction": 2700,
+        "personalExemption": 3200
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.02, "over": 0 },
+          { "rate": 0.03, "over": 1000 },
+          { "rate": 0.04, "over": 2000 },
+          { "rate": 0.0475, "over": 3000 },
+          { "rate": 0.05, "over": 150000 },
+          { "rate": 0.0525, "over": 175000 },
+          { "rate": 0.055, "over": 225000 },
+          { "rate": 0.0575, "over": 300000 }
+        ],
+        "standardDeduction": 5450,
+        "personalExemption": 6400
+      },
+      "dependentExemption": 3200
+    }
+  },
+  "Massachusetts": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.05, "over": 0 },
+          { "rate": 0.09, "over": 1083150 }
+        ],
+        "standardDeduction": null,
+        "personalExemption": 4400
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.05, "over": 0 },
+          { "rate": 0.09, "over": 1083150 }
+        ],
+        "standardDeduction": null,
+        "personalExemption": 8800
+      },
+      "dependentExemption": 1000
+    }
+  },
+  "Michigan": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.0425, "over": 0 }
+        ],
+        "standardDeduction": null,
+        "personalExemption": 5800
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.0425, "over": 0 }
+        ],
+        "standardDeduction": null,
+        "personalExemption": 11600
+      },
+      "dependentExemption": 5800
+    }
+  },
+  "Minnesota": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.0535, "over": 0 },
+          { "rate": 0.068, "over": 32570 },
+          { "rate": 0.0785, "over": 106990 },
+          { "rate": 0.0985, "over": 198630 }
+        ],
+        "standardDeduction": 14950,
+        "personalExemption": null
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.0535, "over": 0 },
+          { "rate": 0.068, "over": 47620 },
+          { "rate": 0.0785, "over": 189180 },
+          { "rate": 0.0985, "over": 330410 }
+        ],
+        "standardDeduction": 29900,
+        "personalExemption": null
+      },
+      "dependentExemption": 5200
+    }
+  },
+  "Mississippi": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.044, "over": 10000 }
+        ],
+        "standardDeduction": 2300,
+        "personalExemption": 6000
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.044, "over": 10000 }
+        ],
+        "standardDeduction": 4600,
+        "personalExemption": 12000
+      },
+      "dependentExemption": 1500
+    }
+  },
+
+  "Missouri": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.02, "over": 1313 },
+          { "rate": 0.025, "over": 2626 },
+          { "rate": 0.03, "over": 3939 },
+          { "rate": 0.035, "over": 5252 },
+          { "rate": 0.04, "over": 6565 },
+          { "rate": 0.045, "over": 7878 },
+          { "rate": 0.047, "over": 9191 }
+        ],
+        "standardDeduction": 15000,
+        "personalExemption": null
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.02, "over": 1313 },
+          { "rate": 0.025, "over": 2626 },
+          { "rate": 0.03, "over": 3939 },
+          { "rate": 0.035, "over": 5252 },
+          { "rate": 0.04, "over": 6565 },
+          { "rate": 0.045, "over": 7878 },
+          { "rate": 0.047, "over": 9191 }
+        ],
+        "standardDeduction": 30000,
+        "personalExemption": null
+      },
+      "dependentExemption": null
+    }
+  },
+  "Montana": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.047, "over": 0 },
+          { "rate": 0.059, "over": 21100 }
+        ],
+        "standardDeduction": 15000,
+        "personalExemption": null
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.047, "over": 0 },
+          { "rate": 0.059, "over": 42200 }
+        ],
+        "standardDeduction": 30000,
+        "personalExemption": null
+      },
+      "dependentExemption": null
+    }
+  },
+  "Nebraska": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.0246, "over": 0 },
+          { "rate": 0.0351, "over": 4030 },
+          { "rate": 0.0501, "over": 24120 },
+          { "rate": 0.052, "over": 38870 }
+        ],
+        "standardDeduction": 8600,
+        "personalCredit": 171
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.0246, "over": 0 },
+          { "rate": 0.0351, "over": 8040 },
+          { "rate": 0.0501, "over": 48250 },
+          { "rate": 0.052, "over": 77730 }
+        ],
+        "standardDeduction": 17200,
+        "personalCredit": 342
+      },
+      "dependentCredit": 171
+    }
+  },
+  "Nevada": {
+    "incomeTax": {
+      "single": {
+        "brackets": [],
+        "standardDeduction": null,
+        "personalExemption": null
+      },
+      "married": {
+        "brackets": [],
+        "standardDeduction": null,
+        "personalExemption": null
+      },
+      "dependentExemption": null
+    }
+  },
+  "New Hampshire": {
+    "incomeTax": {
+      "single": {
+        "brackets": [],
+        "standardDeduction": null,
+        "personalExemption": null
+      },
+      "married": {
+        "brackets": [],
+        "standardDeduction": null,
+        "personalExemption": null
+      },
+      "dependentExemption": null
+    }
+  },
+
+  "New Jersey": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.014, "over": 0 },
+          { "rate": 0.0175, "over": 20000 },
+          { "rate": 0.035, "over": 35000 },
+          { "rate": 0.05525, "over": 40000 },
+          { "rate": 0.0637, "over": 75000 },
+          { "rate": 0.0897, "over": 500000 },
+          { "rate": 0.1075, "over": 1000000 }
+        ],
+        "standardDeduction": null,
+        "personalExemption": 1000
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.014, "over": 0 },
+          { "rate": 0.0175, "over": 20000 },
+          { "rate": 0.0245, "over": 50000 },
+          { "rate": 0.035, "over": 70000 },
+          { "rate": 0.05525, "over": 80000 },
+          { "rate": 0.0637, "over": 150000 },
+          { "rate": 0.0897, "over": 500000 },
+          { "rate": 0.1075, "over": 1000000 }
+        ],
+        "standardDeduction": null,
+        "personalExemption": 2000
+      },
+      "dependentExemption": 1500
+    }
+  },
+  "New Mexico": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.015, "over": 0 },
+          { "rate": 0.032, "over": 5500 },
+          { "rate": 0.043, "over": 16500 },
+          { "rate": 0.047, "over": 33500 },
+          { "rate": 0.049, "over": 66500 },
+          { "rate": 0.059, "over": 210000 }
+        ],
+        "standardDeduction": 15000,
+        "personalExemption": null
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.015, "over": 0 },
+          { "rate": 0.032, "over": 8000 },
+          { "rate": 0.043, "over": 25000 },
+          { "rate": 0.047, "over": 50000 },
+          { "rate": 0.049, "over": 100000 },
+          { "rate": 0.059, "over": 315000 }
+        ],
+        "standardDeduction": 30000,
+        "personalExemption": null
+      },
+      "dependentExemption": 4000
+    }
+  },
+  "New York": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.04, "over": 0 },
+          { "rate": 0.045, "over": 8500 },
+          { "rate": 0.0525, "over": 11700 },
+          { "rate": 0.055, "over": 13900 },
+          { "rate": 0.06, "over": 80650 },
+          { "rate": 0.0685, "over": 215400 },
+          { "rate": 0.0965, "over": 1077550 },
+          { "rate": 0.103, "over": 5000000 },
+          { "rate": 0.109, "over": 25000000 }
+        ],
+        "standardDeduction": 8000,
+        "personalExemption": null
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.04, "over": 0 },
+          { "rate": 0.045, "over": 17150 },
+          { "rate": 0.0525, "over": 23600 },
+          { "rate": 0.055, "over": 27900 },
+          { "rate": 0.06, "over": 161550 },
+          { "rate": 0.0685, "over": 323200 },
+          { "rate": 0.0965, "over": 2155350 },
+          { "rate": 0.103, "over": 5000000 },
+          { "rate": 0.109, "over": 25000000 }
+        ],
+        "standardDeduction": 16050,
+        "personalExemption": null
+      },
+      "dependentExemption": 1000
+    }
+  },
+  "North Carolina": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.0425, "over": 0 }
+        ],
+        "standardDeduction": 12750,
+        "personalExemption": null
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.0425, "over": 0 }
+        ],
+        "standardDeduction": 25500,
+        "personalExemption": null
+      },
+      "dependentExemption": null
+    }
+  },
+  "North Dakota": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.0195, "over": 48475 },
+          { "rate": 0.025, "over": 244825 }
+        ],
+        "standardDeduction": 15000,
+        "personalExemption": null
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.0195, "over": 80975 },
+          { "rate": 0.025, "over": 298075 }
+        ],
+        "standardDeduction": 30000,
+        "personalExemption": null
+      },
+      "dependentExemption": null
+    }
+  },
+
+  "Ohio": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.0275, "over": 26050 },
+          { "rate": 0.035, "over": 100000 }
+        ],
+        "standardDeduction": null,
+        "personalExemption": 2400
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.0275, "over": 26050 },
+          { "rate": 0.035, "over": 100000 }
+        ],
+        "standardDeduction": null,
+        "personalExemption": 4800
+      },
+      "dependentExemption": 2400
+    }
+  },
+  "Oklahoma": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.0025, "over": 0 },
+          { "rate": 0.0075, "over": 1000 },
+          { "rate": 0.0175, "over": 2500 },
+          { "rate": 0.0275, "over": 3750 },
+          { "rate": 0.0375, "over": 4900 },
+          { "rate": 0.0475, "over": 7200 }
+        ],
+        "standardDeduction": 6350,
+        "personalExemption": 1000
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.0025, "over": 0 },
+          { "rate": 0.0075, "over": 2000 },
+          { "rate": 0.0175, "over": 5000 },
+          { "rate": 0.0275, "over": 7500 },
+          { "rate": 0.0375, "over": 9800 },
+          { "rate": 0.0475, "over": 14400 }
+        ],
+        "standardDeduction": 12700,
+        "personalExemption": 2000
+      },
+      "dependentExemption": 1000
+    }
+  },
+  "Oregon": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.0475, "over": 0 },
+          { "rate": 0.0675, "over": 4400 },
+          { "rate": 0.0875, "over": 11050 },
+          { "rate": 0.099, "over": 125000 }
+        ],
+        "standardDeduction": 2800,
+        "personalCredit": 250
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.0475, "over": 0 },
+          { "rate": 0.0675, "over": 8800 },
+          { "rate": 0.0875, "over": 22100 },
+          { "rate": 0.099, "over": 250000 }
+        ],
+        "standardDeduction": 5600,
+        "personalCredit": 500
+      },
+      "dependentCredit": 250
+    }
+  },
+  "Pennsylvania": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.0307, "over": 0 }
+        ],
+        "standardDeduction": null,
+        "personalExemption": null
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.0307, "over": 0 }
+        ],
+        "standardDeduction": null,
+        "personalExemption": null
+      },
+      "dependentExemption": null
+    }
+  },
+  "Rhode Island": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.0375, "over": 0 },
+          { "rate": 0.0475, "over": 79900 },
+          { "rate": 0.0599, "over": 181650 }
+        ],
+        "standardDeduction": 10900,
+        "personalExemption": 5100
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.0375, "over": 0 },
+          { "rate": 0.0475, "over": 79900 },
+          { "rate": 0.0599, "over": 181650 }
+        ],
+        "standardDeduction": 21800,
+        "personalExemption": 10200
+      },
+      "dependentExemption": 5100
+    }
+  },
+
+  "South Carolina": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.00, "over": 0 },
+          { "rate": 0.03, "over": 3560 },
+          { "rate": 0.062, "over": 17830 }
+        ],
+        "standardDeduction": 15000,
+        "personalExemption": null
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.00, "over": 0 },
+          { "rate": 0.03, "over": 3560 },
+          { "rate": 0.062, "over": 17830 }
+        ],
+        "standardDeduction": 30000,
+        "personalExemption": null
+      },
+      "dependentExemption": 4790
+    }
+  },
+  "South Dakota": {
+    "incomeTax": {
+      "single": {
+        "brackets": [],
+        "standardDeduction": null,
+        "personalExemption": null
+      },
+      "married": {
+        "brackets": [],
+        "standardDeduction": null,
+        "personalExemption": null
+      },
+      "dependentExemption": null
+    }
+  },
+  "Tennessee": {
+    "incomeTax": {
+      "single": {
+        "brackets": [],
+        "standardDeduction": null,
+        "personalExemption": null
+      },
+      "married": {
+        "brackets": [],
+        "standardDeduction": null,
+        "personalExemption": null
+      },
+      "dependentExemption": null
+    }
+  },
+  "Texas": {
+    "incomeTax": {
+      "single": {
+        "brackets": [],
+        "standardDeduction": null,
+        "personalExemption": null
+      },
+      "married": {
+        "brackets": [],
+        "standardDeduction": null,
+        "personalExemption": null
+      },
+      "dependentExemption": null
+    }
+  },
+   "Utah": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.0455, "over": 0 }
+        ],
+        "standardDeduction": null,
+        "personalCredit": 900
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.0455, "over": 0 }
+        ],
+        "standardDeduction": null,
+        "personalCredit": 1800
+      },
+      "dependentExemption": 2046
+    }
+  },
+
+  "Vermont": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.0335, "over": 0 },
+          { "rate": 0.066, "over": 47900 },
+          { "rate": 0.076, "over": 116000 },
+          { "rate": 0.0875, "over": 242000 }
+        ],
+        "standardDeduction": 7400,
+        "personalExemption": 5100
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.0335, "over": 0 },
+          { "rate": 0.066, "over": 79950 },
+          { "rate": 0.076, "over": 193300 },
+          { "rate": 0.0875, "over": 294600 }
+        ],
+        "standardDeduction": 14850,
+        "personalExemption": 10200
+      },
+      "dependentExemption": 5100
+    }
+  },
+  "Virginia": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.02, "over": 0 },
+          { "rate": 0.03, "over": 3000 },
+          { "rate": 0.05, "over": 5000 },
+          { "rate": 0.0575, "over": 17000 }
+        ],
+        "standardDeduction": 8500,
+        "personalExemption": 930
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.02, "over": 0 },
+          { "rate": 0.03, "over": 3000 },
+          { "rate": 0.05, "over": 5000 },
+          { "rate": 0.0575, "over": 17000 }
+        ],
+        "standardDeduction": 17000,
+        "personalExemption": 1860
+      },
+      "dependentExemption": 930
+    }
+  },
+  "Washington": {
+    "incomeTax": {
+      "single": {
+        "brackets": [],
+        "standardDeduction": null,
+        "personalExemption": null
+      },
+      "married": {
+        "brackets": [],
+        "standardDeduction": null,
+        "personalExemption": null
+      },
+      "dependentExemption": null
+    }
+  },
+  "West Virginia": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.0222, "over": 0 },
+          { "rate": 0.0296, "over": 10000 },
+          { "rate": 0.0333, "over": 25000 },
+          { "rate": 0.0444, "over": 40000 },
+          { "rate": 0.0482, "over": 60000 }
+        ],
+        "standardDeduction": null,
+        "personalExemption": 2000
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.0222, "over": 0 },
+          { "rate": 0.0296, "over": 10000 },
+          { "rate": 0.0333, "over": 25000 },
+          { "rate": 0.0444, "over": 40000 },
+          { "rate": 0.0482, "over": 60000 }
+        ],
+        "standardDeduction": null,
+        "personalExemption": 4000
+      },
+      "dependentExemption": 2000
+    }
+  },
+  "Wisconsin": {
+    "incomeTax": {
+      "single": {
+        "brackets": [
+          { "rate": 0.035, "over": 0 },
+          { "rate": 0.044, "over": 14680 },
+          { "rate": 0.053, "over": 29370 },
+          { "rate": 0.0765, "over": 323290 }
+        ],
+        "standardDeduction": 13560,
+        "personalExemption": 700
+      },
+      "married": {
+        "brackets": [
+          { "rate": 0.035, "over": 0 },
+          { "rate": 0.044, "over": 19580 },
+          { "rate": 0.053, "over": 39150 },
+          { "rate": 0.0765, "over": 431060 }
+        ],
+        "standardDeduction": 25110,
+        "personalExemption": 1400
+      },
+      "dependentExemption": 700
+    }
+  },
+  "Wyoming": {
+    "incomeTax": {
+      "single": {
+        "brackets": [],
+        "standardDeduction": null,
+        "personalExemption": null
+      },
+      "married": {
+        "brackets": [],
+        "standardDeduction": null,
+        "personalExemption": null
+      },
+      "dependentExemption": null
+    }
+  }
+}

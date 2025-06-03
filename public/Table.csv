@@ -1,0 +1,35 @@
+GeoFips,GeoName,LineCode,Description,2023
+36000,New York,1,All industry total,2172009629
+36000,New York,2,"  Private industries",1962195844
+36000,New York,3,"    Agriculture, forestry, fishing and hunting",4061306
+36000,New York,6,"    Mining, quarrying, and oil and gas extraction",1046250
+36000,New York,10,"    Utilities",29161072
+36000,New York,11,"    Construction",64192545
+36000,New York,12,"    Manufacturing",85901837
+36000,New York,13,"      Durable goods manufacturing",32351428
+36000,New York,25,"      Nondurable goods manufacturing",53550409
+36000,New York,34,"    Wholesale trade",89776317
+36000,New York,35,"    Retail trade",104510410
+36000,New York,36,"    Transportation and warehousing",47973302
+36000,New York,45,"    Information",181733938
+36000,New York,50,"    Finance, insurance, real estate, rental, and leasing",729857255
+36000,New York,51,"      Finance and insurance",420896663
+36000,New York,56,"      Real estate and rental and leasing",308960592
+36000,New York,59,"    Professional and business services",284137200
+36000,New York,60,"      Professional, scientific, and technical services",192488399
+36000,New York,64,"      Management of companies and enterprises",34398937
+36000,New York,65,"      Administrative and support and waste management and remediation services",57249863
+36000,New York,68,"    Educational services, health care, and social assistance",203283870
+36000,New York,69,"      Educational services",41690752
+36000,New York,70,"      Health care and social assistance",161593118
+36000,New York,75,"    Arts, entertainment, recreation, accommodation, and food services",96560324
+36000,New York,76,"      Arts, entertainment, and recreation",32724222
+36000,New York,79,"      Accommodation and food services",63836102
+36000,New York,82,"    Other services (except government and government enterprises)",40000217
+36000,New York,83,Government and government enterprises,209813786
+36000,New York,87,Natural resources and mining,5107557
+36000,New York,88,Trade,194286727
+36000,New York,89,Transportation and utilities,77134374
+36000,New York,90,Manufacturing and information,267635775
+36000,New York,91,Private goods-producing industries 2,155201939
+36000,New York,92,Private services-providing industries 3,1806993905
