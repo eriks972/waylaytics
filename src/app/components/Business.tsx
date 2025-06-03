@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import * as d3 from "d3";
 
+type RawRow = Record<string, string>;
+
 interface CBPRow {
   NAME: string;
   NAICS2017: string;
@@ -12,32 +14,30 @@ interface CBPRow {
   LFO_LABEL: string;
 }
 
-
 const NAICS_LABELS: Record<string, string> = {
-    "00": "All Industries",
-    "11": "Agriculture, Forestry, Fishing and Hunting",
-    "21": "Mining, Quarrying, and Oil and Gas Extraction",
-    "22": "Utilities",
-    "23": "Construction",
-    "31-33": "Manufacturing",
-    "42": "Wholesale Trade",
-    "44-45": "Retail Trade",
-    "48-49": "Transportation and Warehousing",
-    "51": "Information",
-    "52": "Finance and Insurance",
-    "53": "Real Estate and Rental and Leasing",
-    "54": "Professional, Scientific, and Technical Services",
-    "55": "Management of Companies and Enterprises",
-    "56": "Administrative and Support and Waste Management and Remediation Services",
-    "61": "Educational Services",
-    "62": "Health Care and Social Assistance",
-    "71": "Arts, Entertainment, and Recreation",
-    "72": "Accommodation and Food Services",
-    "81": "Other Services (except Public Administration)",
-    "92": "Public Administration",
-    "99": "Unclassified",
-    // Add more as needed
-  };
+  "00": "All Industries",
+  "11": "Agriculture, Forestry, Fishing and Hunting",
+  "21": "Mining, Quarrying, and Oil and Gas Extraction",
+  "22": "Utilities",
+  "23": "Construction",
+  "31-33": "Manufacturing",
+  "42": "Wholesale Trade",
+  "44-45": "Retail Trade",
+  "48-49": "Transportation and Warehousing",
+  "51": "Information",
+  "52": "Finance and Insurance",
+  "53": "Real Estate and Rental and Leasing",
+  "54": "Professional, Scientific, and Technical Services",
+  "55": "Management of Companies and Enterprises",
+  "56": "Administrative and Support and Waste Management and Remediation Services",
+  "61": "Educational Services",
+  "62": "Health Care and Social Assistance",
+  "71": "Arts, Entertainment, and Recreation",
+  "72": "Accommodation and Food Services",
+  "81": "Other Services (except Public Administration)",
+  "92": "Public Administration",
+  "99": "Unclassified",
+};
 
 export default function BusinessIndustry({ state }: { state: string }) {
   const [industrySummary, setIndustrySummary] = useState<{ industry: string; emp: number }[]>([]);
@@ -45,25 +45,32 @@ export default function BusinessIndustry({ state }: { state: string }) {
   const [industryBreakdown, setIndustryBreakdown] = useState<CBPRow[]>([]);
 
   useEffect(() => {
-    d3.csv("/Business_1.csv").then((data) => {
-      const filtered = data.filter((row: any) =>
+    d3.csv("/Business_1.csv").then((data: RawRow[]) => {
+      const filtered = data.filter((row) =>
         row["Geographic Area Name (NAME)"]?.includes(state)
       );
 
       const seen = new Set();
-      const uniqueRows: any[] = [];
+      const uniqueRows: CBPRow[] = [];
       for (const row of filtered) {
         const industry = row["2017 NAICS code (NAICS2017)"] || "Unknown";
         if (!seen.has(industry)) {
           seen.add(industry);
-          uniqueRows.push(row);
+          uniqueRows.push({
+            NAME: row["Geographic Area Name (NAME)"],
+            NAICS2017: row["2017 NAICS code (NAICS2017)"],
+            EMP: row["Number of employees (EMP)"],
+            ESTAB: row["Number of establishments (ESTAB)"],
+            EMPSZES_LABEL: row["Meaning of Employment size of establishments code (EMPSZES_LABEL)"],
+            LFO_LABEL: row["Meaning of Legal form of organization code (LFO_LABEL)"],
+          });
         }
       }
 
       const summary = uniqueRows
         .map((row) => ({
-          industry: row["2017 NAICS code (NAICS2017)"],
-          emp: parseInt(row["Number of employees (EMP)"].replace(/,/g, "") || "0"),
+          industry: row.NAICS2017,
+          emp: parseInt(row.EMP.replace(/,/g, "") || "0"),
         }))
         .sort((a, b) => b.emp - a.emp);
 
@@ -74,21 +81,21 @@ export default function BusinessIndustry({ state }: { state: string }) {
   useEffect(() => {
     if (!selectedIndustry) return;
 
-    d3.csv("/Business_1.csv").then((data) => {
+    d3.csv("/Business_1.csv").then((data: RawRow[]) => {
       const breakdown = data
         .filter(
-          (row: any) =>
+          (row) =>
             row["2017 NAICS code (NAICS2017)"] === selectedIndustry &&
             row["Geographic Area Name (NAME)"].includes(state)
         )
-        .map((row: any) => ({
+        .map((row) => ({
           NAME: row["Geographic Area Name (NAME)"],
           NAICS2017: row["2017 NAICS code (NAICS2017)"],
           EMP: row["Number of employees (EMP)"],
           ESTAB: row["Number of establishments (ESTAB)"],
           EMPSZES_LABEL: row["Meaning of Employment size of establishments code (EMPSZES_LABEL)"],
           LFO_LABEL: row["Meaning of Legal form of organization code (LFO_LABEL)"],
-        }));
+        })) as CBPRow[];
 
       setIndustryBreakdown(breakdown);
     });
