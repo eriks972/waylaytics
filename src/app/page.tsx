@@ -8,7 +8,7 @@ import { GeoPermissibleObjects } from "d3-geo";
 import { Feature, FeatureCollection, Geometry } from "geojson"; // Removed GeoJsonProperties
 import { useRouter } from 'next/navigation';
 import { Analytics } from "@vercel/analytics/next"
-Analytics
+<Analytics />
 // 1. Define the specific TopoJSON structure for states
 interface USStatesTopology extends Topology {
   objects: {
