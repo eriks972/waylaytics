@@ -2,13 +2,6 @@
 import { useEffect, useState } from "react";
 import * as d3 from "d3";
 
-interface EmploymentRow {
-  NAME: string;
-  NAICS2017: string;
-  ESTAB: string;
-  [key: string]: string; // catch-all for any additional keys
-}
-
 export default function JobsEmployment({ state }: { state: string }) {
   const [totalEstablishments, setTotalEstablishments] = useState<number | null>(null);
 
