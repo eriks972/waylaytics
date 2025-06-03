@@ -3,9 +3,9 @@
 import { useState, useEffect } from "react";
 import * as d3 from "d3";
 import { feature } from "topojson-client";
-import type { Topology, Objects, GeometryObject } from "topojson-specification";
+import type { Topology, GeometryObject } from "topojson-specification"; // Removed Objects
 import { GeoPermissibleObjects } from "d3-geo";
-import { Feature, FeatureCollection, Geometry, GeoJsonProperties } from "geojson";
+import { Feature, FeatureCollection, Geometry } from "geojson"; // Removed GeoJsonProperties
 import { useRouter } from 'next/navigation';
 
 // 1. Define the specific TopoJSON structure for states
@@ -174,13 +174,6 @@ export default function HomePage() {
     setSelectedStateFips(null);
     setSelectedStateFeature(null);
     setSelectedCounty(null);
-
-    // Re-render the map to its initial US view
-    // Note: The main useEffect handles the rendering based on state changes,
-    // so manually manipulating D3 here might cause slight race conditions or be redundant.
-    // It's generally better to let the useEffect react to `usData` being available.
-    // The previous implementation of `resetMap` manually re-applied projection;
-    // this is now implicitly handled by the main useEffect when `countyData` becomes null.
   };
 
   return (
@@ -214,7 +207,6 @@ export default function HomePage() {
     </main>
   );
 }
-
 
 
 

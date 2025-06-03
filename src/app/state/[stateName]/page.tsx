@@ -1,22 +1,11 @@
 "use client";
 
-import { notFound } from "next/navigation";
 import { useEffect, useState } from "react";
-import * as d3 from "d3";
 import { useParams } from "next/navigation";
 import BusinessIndustry from "@/app/components/Business";
 import JobsEmployment from "@/app/components/Employment";
 import IncomeTaxCalculator from "@/app/components/IncomeTaxCalculator";
-import { useRouter } from 'next/navigation'; // Import the router
 
-interface CBPRow {
-  NAME: string;
-  NAICS2017: string;
-  EMP: string;
-  ESTAB: string;
-  EMPSZES_LABEL: string;
-  LFO_LABEL: string;
-}
 
 const NAICS_LABELS: Record<string, string> = {
   "00": "All Industries",
@@ -47,74 +36,8 @@ const NAICS_LABELS: Record<string, string> = {
 export default function StateDetailPage() {
   const params = useParams();
   const state = decodeURIComponent(params.stateName as string);
-  const router = useRouter(); // Initialize the router
-
-  // const supportedStates = ["New York", "Texas", "California"];
-  // if (!supportedStates.includes(state)) {
-  //   notFound();
-  // }
-
-  const [industrySummary, setIndustrySummary] = useState<{ industry: string; emp: number }[]>([]);
-  const [totalEstablishments, setTotalEstablishments] = useState<number | null>(null);
   const [activeTab, setActiveTab] = useState("💰 Taxes");
-  const [selectedIndustry, setSelectedIndustry] = useState<string | null>(null);
-  const [industryBreakdown, setIndustryBreakdown] = useState<CBPRow[]>([]);
-   const [selectedState, setSelectedState] = useState<string | null>(null);
 
-  // useEffect(() => {
-  //   d3.csv("/NewYork1.csv").then((data) => {
-  //     const filtered = data.filter(
-  //       (row: any) => row["Geographic Area Name (NAME)"] && row["Geographic Area Name (NAME)"].includes(state)
-  //     );
-
-  //     const seen = new Set();
-  //     const uniqueIndustryRows: any[] = [];
-  //     let totalEstab = 0;
-
-  //     for (const row of filtered) {
-  //       const industry = row["2017 NAICS code (NAICS2017)"] || "Unknown";
-  //       if (!seen.has(industry)) {
-  //         seen.add(industry);
-  //         uniqueIndustryRows.push(row);
-  //       }
-  //       const estab = parseInt(row["Number of establishments (ESTAB)"].replace(/,/g, "")) || 0;
-  //       totalEstab += estab;
-  //     }
-
-  //     const summary = uniqueIndustryRows
-  //       .map((row) => {
-  //         const industry = row["2017 NAICS code (NAICS2017)"];
-  //         const emp = parseInt(row["Number of employees (EMP)"].replace(/,/g, "")) || 0;
-  //         return { industry, emp };
-  //       })
-  //       .sort((a, b) => b.emp - a.emp)
-
-  //     setIndustrySummary(summary);
-  //     setTotalEstablishments(totalEstab);
-  //   });
-  // }, [state]);
-
-  // useEffect(() => {
-  //   if (!selectedIndustry) return;
-
-  //   d3.csv("/NewYork1.csv").then((data) => {
-  //     const breakdown = data
-  //       .filter(
-  //         (row: any) =>
-  //           row["2017 NAICS code (NAICS2017)"] === selectedIndustry &&
-  //           row["Geographic Area Name (NAME)"].includes(state)
-  //       )
-  //       .map((row: any) => ({
-  //         NAME: row["Geographic Area Name (NAME)"] || "",
-  //         NAICS2017: row["2017 NAICS code (NAICS2017)"] || "",
-  //         EMP: row["Number of employees (EMP)"] || "",
-  //         ESTAB: row["Number of establishments (ESTAB)"] || "",
-  //         EMPSZES_LABEL: row["Meaning of Employment size of establishments code (EMPSZES_LABEL)"] || "",
-  //         LFO_LABEL: row["Meaning of Legal form of organization code (LFO_LABEL)"] || "",
-  //       }));
-  //     setIndustryBreakdown(breakdown);
-  //   });
-  // }, [selectedIndustry, state]);
   const renderTabContent = () => {
     
     switch (activeTab) {
