@@ -3,39 +3,13 @@
 import { useState, useEffect } from "react";
 import * as d3 from "d3";
 import { feature } from "topojson-client";
+import type { Topology } from "topojson-specification";
 import { GeoPermissibleObjects } from "d3-geo";
 import { Feature, FeatureCollection, Geometry, GeoJsonProperties } from "geojson";
-import { BaseType } from "d3";
-import { useRouter } from 'next/navigation'; // Import the router
-
-/// <reference types="geojson" />
+import { useRouter } from 'next/navigation';
 
 interface MapFeature extends Feature<Geometry, { name: string }> {
   id: string;
-}
-
-interface USStatesTopoJSON {
-  type: "Topology";
-  objects: {
-    states: {
-      type: "GeometryCollection";
-      geometries: Array<Feature<Geometry, { name: string }>>;
-    };
-  };
-  arcs: any[];
-  transform?: any;
-}
-
-interface USCountiesTopoJSON {
-  type: "Topology";
-  objects: {
-    counties: {
-      type: "GeometryCollection";
-      geometries: Array<Feature<Geometry, GeoJsonProperties>>;
-    };
-  };
-  arcs: any[];
-  transform?: any;
 }
 
 export default function HomePage() {
@@ -45,27 +19,26 @@ export default function HomePage() {
   const [selectedStateFips, setSelectedStateFips] = useState<string | null>(null);
   const [selectedStateFeature, setSelectedStateFeature] = useState<MapFeature | null>(null);
   const [selectedCounty, setSelectedCounty] = useState<MapFeature | null>(null);
-  const router = useRouter(); // Initialize the router
+  const router = useRouter();
 
   const svgWidth = 1000;
   const svgHeight = 600;
 
-  // Load US map (states)
   useEffect(() => {
-    d3.json("/us-states-topo.json")
-      .then((topology: any) => {
-        const geoData = feature(topology, topology.objects.states) as unknown as FeatureCollection<Geometry, { name: string }>;
-        const typedFeatures = geoData.features.map(f => ({
-          ...f,
-          id: f.id ? String(f.id) : "",
-          properties: f.properties as { name: string },
-        })) as MapFeature[];
-        setUsData({ type: "FeatureCollection", features: typedFeatures });
-      })
-      .catch(error => console.error("Error loading US states data:", error));
+    d3.json("/us-states-topo.json").then((topology: unknown) => {
+      const geoData = feature(
+        topology as Topology,
+        (topology as any).objects.states
+      ) as unknown as FeatureCollection<Geometry, { name: string }>;
+      const typedFeatures = geoData.features.map(f => ({
+        ...f,
+        id: f.id ? String(f.id) : "",
+        properties: f.properties as { name: string },
+      })) as MapFeature[];
+      setUsData({ type: "FeatureCollection", features: typedFeatures });
+    }).catch(error => console.error("Error loading US states data:", error));
   }, []);
 
-  // Load county data when a state is selected
   useEffect(() => {
     if (!selectedStateFips) {
       setCountyData(null);
@@ -73,24 +46,24 @@ export default function HomePage() {
       return;
     }
 
-    d3.json("/us-counties-topo.json")
-      .then((topology: any) => {
-        const allCounties = feature(topology, topology.objects.counties) as unknown as FeatureCollection<Geometry, GeoJsonProperties>;
-        const stateCounties = allCounties.features
-          .filter((f) => f.id && String(f.id).startsWith(selectedStateFips))
-          .map(f => ({
-            ...f,
-            id: f.id ? String(f.id) : "",
-            properties: f.properties as { name: string },
-          })) as MapFeature[];
+    d3.json("/us-counties-topo.json").then((topology: unknown) => {
+      const allCounties = feature(
+        topology as Topology,
+        (topology as any).objects.counties
+      ) as unknown as FeatureCollection<Geometry, GeoJsonProperties>;
+      const stateCounties = allCounties.features
+        .filter((f) => f.id && String(f.id).startsWith(selectedStateFips))
+        .map(f => ({
+          ...f,
+          id: f.id ? String(f.id) : "",
+          properties: f.properties as { name: string },
+        })) as MapFeature[];
 
-        setCountyData({ type: "FeatureCollection", features: stateCounties });
-        setSelectedCounty(null);
-      })
-      .catch(error => console.error("Error loading US counties data:", error));
+      setCountyData({ type: "FeatureCollection", features: stateCounties });
+      setSelectedCounty(null);
+    }).catch(error => console.error("Error loading US counties data:", error));
   }, [selectedStateFips]);
 
-  // Render map (handles US states and zoomed counties)
   useEffect(() => {
     if (!usData) return;
 
@@ -118,8 +91,8 @@ export default function HomePage() {
       .data(dataToRender.features as MapFeature[])
       .enter()
       .append("path")
-      .attr("d", pathGenerator)
-      .attr("fill", (d) => {
+      .attr("d", (d: MapFeature) => pathGenerator(d)!)
+      .attr("fill", (d: MapFeature) => {
         if (countyData) {
           return selectedCounty?.id === d.id ? "#90ee90" : "#fcd34d";
         } else {
@@ -160,7 +133,7 @@ export default function HomePage() {
     const svg = d3.select<SVGSVGElement, unknown>("#usMap");
     const projection = d3.geoAlbersUsa().scale(1000).translate([svgWidth / 2, svgHeight / 2]);
     const pathGenerator = d3.geoPath().projection(projection);
-    svg.selectAll<SVGPathElement, MapFeature>("path").attr("d", (d) => pathGenerator(d)!);
+    svg.selectAll<SVGPathElement, MapFeature>("path").attr("d", (d: MapFeature) => pathGenerator(d)!);
   };
 
   return (
@@ -194,5 +167,10 @@ export default function HomePage() {
     </main>
   );
 }
+
+
+
+
+
 
 

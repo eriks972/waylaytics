@@ -2,19 +2,43 @@
 
 import { useState, useEffect } from "react";
 
+// Define TypeScript types
+type TaxBracket = {
+  rate: number;
+  over: number;
+};
+
+type FilingStatusInfo = {
+  brackets: TaxBracket[];
+  standardDeduction: number;
+  personalExemption: number | null;
+};
+
+type IncomeTax = {
+  single: FilingStatusInfo;
+  married: FilingStatusInfo;
+  dependentExemption: number;
+};
+
+type StateTaxInfo = {
+  incomeTax: IncomeTax;
+};
+
+type TaxData = Record<string, StateTaxInfo>;
+
 export default function IncomeTaxCalculator({ state }: { state: string }) {
   const [income, setIncome] = useState(0);
-  const [filingStatus, setFilingStatus] = useState("single");
+  const [filingStatus, setFilingStatus] = useState<"single" | "married">("single");
   const [result, setResult] = useState<string | null>(null);
-  const [taxInfo, setTaxInfo] = useState<any>(null);
+  const [taxInfo, setTaxInfo] = useState<StateTaxInfo | null>(null);
 
   useEffect(() => {
     fetch("/IncomeTax.json")
       .then((res) => res.json())
-      .then((data) => {
+      .then((data: TaxData) => {
         const entry = data[state];
         console.log("Loaded tax data for state:", state, entry);
-        setTaxInfo(entry);
+        setTaxInfo(entry ?? null);
       })
       .catch((err) => {
         console.error("Failed to load tax data:", err);
@@ -23,36 +47,35 @@ export default function IncomeTaxCalculator({ state }: { state: string }) {
   }, [state]);
 
   const handleSubmit = (e: React.FormEvent) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  const filingData = taxInfo?.incomeTax?.[filingStatus];
-  if (!filingData || !filingData.brackets) {
-    setResult("No tax data available for this state.");
-    return;
-  }
-
-  const brackets = filingData.brackets;
-  const taxableIncome = Math.max(0, income - (filingData.standardDeduction ?? 0));
-
-  let tax = 0;
-  for (let i = 0; i < brackets.length; i++) {
-    const current = brackets[i];
-    const next = brackets[i + 1];
-    const lowerBound = current.over;
-    const upperBound = next ? next.over : Infinity;
-
-    if (taxableIncome > lowerBound) {
-      const taxedAmount = Math.min(taxableIncome, upperBound) - lowerBound;
-      tax += taxedAmount * current.rate;
-    } else {
-      break;
+    const filingData = taxInfo?.incomeTax?.[filingStatus];
+    if (!filingData || !filingData.brackets) {
+      setResult("No tax data available for this state.");
+      return;
     }
-  }
 
-  const effectiveRate = (tax / income) * 100;
-  setResult(`Estimated Tax: $${tax.toFixed(2)}\nEffective Rate: ${effectiveRate.toFixed(2)}%`);
-};
+    const brackets = filingData.brackets;
+    const taxableIncome = Math.max(0, income - (filingData.standardDeduction ?? 0));
 
+    let tax = 0;
+    for (let i = 0; i < brackets.length; i++) {
+      const current = brackets[i];
+      const next = brackets[i + 1];
+      const lowerBound = current.over;
+      const upperBound = next ? next.over : Infinity;
+
+      if (taxableIncome > lowerBound) {
+        const taxedAmount = Math.min(taxableIncome, upperBound) - lowerBound;
+        tax += taxedAmount * current.rate;
+      } else {
+        break;
+      }
+    }
+
+    const effectiveRate = income > 0 ? (tax / income) * 100 : 0;
+    setResult(`Estimated Tax: $${tax.toFixed(2)}\nEffective Rate: ${effectiveRate.toFixed(2)}%`);
+  };
 
   return (
     <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow text-black max-w-md mx-auto">
@@ -72,7 +95,7 @@ export default function IncomeTaxCalculator({ state }: { state: string }) {
         Filing Status
         <select
           value={filingStatus}
-          onChange={(e) => setFilingStatus(e.target.value)}
+          onChange={(e) => setFilingStatus(e.target.value as "single" | "married")}
           className="w-full p-2 border border-gray-300 rounded mt-1"
         >
           <option value="single">Single</option>
@@ -88,6 +111,7 @@ export default function IncomeTaxCalculator({ state }: { state: string }) {
     </form>
   );
 }
+
 
 
 

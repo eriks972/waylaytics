@@ -2,19 +2,26 @@
 import { useEffect, useState } from "react";
 import * as d3 from "d3";
 
+interface EmploymentRow {
+  NAME: string;
+  NAICS2017: string;
+  ESTAB: string;
+  [key: string]: string; // catch-all for any additional keys
+}
+
 export default function JobsEmployment({ state }: { state: string }) {
   const [totalEstablishments, setTotalEstablishments] = useState<number | null>(null);
 
   useEffect(() => {
     d3.csv("/Business_1.csv").then((data) => {
       const filtered = data.filter(
-        (row: any) =>
+        (row) =>
           row["Geographic Area Name (NAME)"] &&
           row["Geographic Area Name (NAME)"].includes(state)
       );
 
-      const seen = new Set();
-      const uniqueIndustryRows: any[] = [];
+      const seen = new Set<string>();
+      const uniqueIndustryRows: typeof filtered = [];
       let totalEstab = 0;
 
       for (const row of filtered) {
@@ -40,5 +47,6 @@ export default function JobsEmployment({ state }: { state: string }) {
     </div>
   );
 }
+
 
   
